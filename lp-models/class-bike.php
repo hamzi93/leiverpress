@@ -132,6 +132,31 @@ class Bike
         return $bikesCollection;
     }
 
+    public static function getAllAccessibleBikesByBrand($abholdatum, $rueckgabedatum, $brandId)
+    {
+        global $wpdb;
+
+        $tableName = $wpdb->prefix . 'bike';
+        $forgeinTableName = $wpdb->prefix . 'booking';
+
+        $sql = $wpdb->get_results
+        ("SELECT *
+            FROM $tableName as bikes
+            WHERE bikes.bike_id NOT IN (
+            SELECT bike_id
+            FROM $forgeinTableName as bookings
+            WHERE ((booking_abholdatum BETWEEN '$abholdatum' AND '$rueckgabedatum')
+                OR (booking_rueckgabedatum BETWEEN '$abholdatum' AND '$rueckgabedatum')
+                OR ('$abholdatum' BETWEEN booking_abholdatum AND booking_rueckgabedatum)
+                OR ('$rueckgabedatum' BETWEEN booking_abholdatum AND booking_rueckgabedatum))) AND bikes.brand_id = '$brandId'"
+        );
+        $bikesCollection = array();
+        foreach ($sql as $bike) {
+            $bikesCollection[] = new Bike($bike->bike_id, $bike->bike_name, $bike->bike_preis, $bike->bike_rabatt, $bike->bike_bild, $bike->brand_id);
+        }
+        return $bikesCollection;
+    }
+
 
 
     /**

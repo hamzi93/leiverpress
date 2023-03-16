@@ -45,6 +45,22 @@ class Brand
         return $brandsCollection;
     }
 
+    public static function getBrandIdByName($brand_name) {
+        global $wpdb;
+        $tableName = $wpdb->prefix . 'brand';
+    
+        // Holt sich die ID der Marke nach dem Namen des Bikes raus. (Abgesichert durch %s)
+        $query = $wpdb->prepare("SELECT brand_id FROM $tableName WHERE brand_name = %s", $brand_name);
+    
+        $brand = $wpdb->get_results($query);
+    
+        if (!empty($brand)) {
+            return intval($brand[0]->brand_id);
+        } else {
+            throw new Exception("Die gewünschte Marke konnte nicht gefunden werden!");
+        }
+    }
+
     /**
      * Get the value of id
      */
