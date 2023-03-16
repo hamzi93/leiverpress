@@ -3,7 +3,7 @@
 **ToDo:** 
 
 - Interface mit CRUD-Methoden in lp-models erstellen und Domänen-Klassen implementieren lassen. 
-- Logik für den Suchfilter erweitern (Datum und Marke gleichzeitig suchen soll möglich sein -> momentan funktioniert nur nach Marken suchen oder nach Datum mit allen Motorrädern)
+- ~~Logik für den Suchfilter erweitern (Datum und Marke gleichzeitig suchen soll möglich sein -> momentan funktioniert nur nach Marken suchen oder nach Datum mit allen Motorrädern)~~ ✅ _16.03.2023 CS_
 - Das erstellen von Equipment (Handschuhe, Helme) -> Domänen-Klasse, Datenbank-Tabelle, Mockdaten
 - Das erstellen eines richtigen UML-Diagramms, damit wir wissen wie unsere Datenbank aussehen muss (momentan hab ich nur die wichtigsten Sachen in den Domänen-Klassen und in der DB hinterlegt)
 - Eine View erstellen (wenn man ein Motorrad anklickt soll eine Ansicht mit Details von diesem Mottorad erscheinen)
