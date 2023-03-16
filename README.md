@@ -8,6 +8,7 @@
 - Das erstellen eines richtigen UML-Diagramms, damit wir wissen wie unsere Datenbank aussehen muss (momentan hab ich nur die wichtigsten Sachen in den Domänen-Klassen und in der DB hinterlegt)
 - Eine View erstellen (wenn man ein Motorrad anklickt soll eine Ansicht mit Details von diesem Mottorad erscheinen)
 - Logik: Rückgabedatum darf nicht vor Abholdatum liegen
+- SQL Statements mit %s absichern (siehe Beispiel class-brand getBrandIdByName)
 - Weitere Ideen für dieses Plugin
 
 ## Workflow
