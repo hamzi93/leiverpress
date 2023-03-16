@@ -1,0 +1,37 @@
+[
+    {
+        "booking_id": 1,
+        "booking_abholdatum" : "2023-03-19 00:00:00",
+        "booking_rueckgabedatum" : "2023-03-23 00:00:00",
+        "booking_preis": 14000,
+        "bike_id": 2
+    },
+    {
+        "booking_id": 2,
+        "booking_abholdatum" : "2023-03-21 00:00:00",
+        "booking_rueckgabedatum" : "2023-03-25 00:00:00",
+        "booking_preis": 14000,
+        "bike_id": 1
+    },
+    {
+        "booking_id": 3,
+        "booking_abholdatum" : "2023-03-19 00:00:00",
+        "booking_rueckgabedatum" : "2023-03-22 00:00:00",
+        "booking_preis": 14000,
+        "bike_id": 4
+    },
+    {
+        "booking_id": 4,
+        "booking_abholdatum" : "2023-03-17 00:00:00",
+        "booking_rueckgabedatum" : "2023-03-19 00:00:00",
+        "booking_preis": 14000,
+        "bike_id": 2
+    },
+    {
+        "booking_id": 5 ,
+        "booking_abholdatum" : "2023-03-23 00:00:00",
+        "booking_rueckgabedatum" : "2023-03-25 00:00:00",
+        "booking_preis": 14000,
+        "bike_id": 3
+    }
+]
