@@ -1,0 +1,22 @@
+[
+    {
+        "clothingcategory_id": 1,
+        "clothingcategory_name": "Helm"
+    },
+    {
+        "clothingcategory_id": 2,
+        "clothingcategory_name": "Jacke"
+    },
+    {
+        "clothingcategory_id": 3,
+        "clothingcategory_name": "Hose"
+    },
+    {
+        "clothingcategory_id": 4,
+        "clothingcategory_name": "Stiefel"
+    },
+    {
+        "clothingcategory_id": 5,
+        "clothingcategory_name": "Handschuhe"
+    }
+]

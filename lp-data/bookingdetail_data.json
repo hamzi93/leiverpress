@@ -1,0 +1,56 @@
+[
+    {
+        "bookingdetail_id": 1,
+        "bookingdetail_begindate": "2023-04-10 08:00:00",
+        "bookingdetail_enddate": "2023-04-12 18:30:00",
+        "bookingdetail_price": 42000,
+        "bike_id": 2,
+        "customer_id": 2,
+        "booking_id": 1
+    },
+    {
+        "bookingdetail_id": 2,
+        "bookingdetail_begindate": "2023-04-10 08:00:00",
+        "bookingdetail_enddate": "2023-04-12 18:30:00",
+        "bookingdetail_price": 39000,
+        "bike_id": 3,
+        "customer_id": 2,
+        "booking_id": 1
+    },
+    {
+        "bookingdetail_id": 3,
+        "bookingdetail_begindate": "2023-04-20 08:00:00",
+        "bookingdetail_enddate": "2023-04-22 18:30:00",
+        "bookingdetail_price": 39000,
+        "bike_id": 1,
+        "customer_id": 1,
+        "booking_id": 2
+    },
+    {
+        "bookingdetail_id": 4,
+        "bookingdetail_begindate": "2023-04-13 08:00:00",
+        "bookingdetail_enddate": "2023-04-15 18:30:00",
+        "bookingdetail_price": 39000,
+        "bike_id": 3,
+        "customer_id": 3,
+        "booking_id": 3
+    },
+    {
+        "bookingdetail_id": 5,
+        "bookingdetail_begindate": "2023-04-23 08:00:00",
+        "bookingdetail_enddate": "2023-04-25 18:30:00",
+        "bookingdetail_price": 39000,
+        "bike_id": 1,
+        "customer_id": 4,
+        "booking_id": 4
+    },
+    {
+        "bookingdetail_id": 6,
+        "bookingdetail_begindate": "2023-04-20 08:00:00",
+        "bookingdetail_enddate": "2023-04-22 18:30:00",
+        "bookingdetail_price": 48000,
+        "bike_id": 4,
+        "customer_id": 1,
+        "booking_id": 5
+    }
+]

@@ -3,22 +3,16 @@
 
 class Bike
 {
-    private $id;
-    private $name;
-    private $preis;
-    private $rabatt;
-    private $bild;
-    private $brandId;
+    private $b_id;
+    private $b_licenseplate;
+    private $bd_id;
     private $errors;
 
-    function __construct($id, string $name, int $preis, bool $rabatt, $bild, $brandId)
+    function __construct($id, $licenseplate, $bikeDetailId)
     {
         $this->setId($id);
-        $this->setName($name);
-        $this->setPreis($preis);
-        $this->setRabatt($rabatt);
-        $this->setBild($bild);
-        $this->setBrandId($brandId);
+        $this->setLicensePlate($licenseplate);
+        $this->setBdId($bikeDetailId);
         $this->errors = [];
     }
 
@@ -52,22 +46,20 @@ class Bike
         }
     } */
 
-    public static function getAllBikesFromJson()
+    static function getAllBikesFromJson()
     {
-        $bikeString = file_get_contents(MY_PLUGIN_PATH . 'lp-data/bike_data.json');
-        if ($bikeString === false) {
-            return null;
-        }
-        $bikeObjects = json_decode($bikeString);
+        require_once(MY_PLUGIN_PATH . 'lp-functions/model-functions.php');
+        
+        $bikeObjects = getFromJson(MY_PLUGIN_PATH . 'lp-data/bike_data.json');
         $bikeCollection = array();
         foreach ($bikeObjects as $bike) {
 
-            $bikeCollection[] = new Bike($bike->bike_id, $bike->bike_name, $bike->bike_preis, $bike->bike_rabatt, $bike->bike_bild, $bike->brand_id);
+            $bikeCollection[] = new Bike($bike->bike_id, $bike->bike_licenseplate, $bike->bikedetail_id);
         }
         return $bikeCollection;
     }
 
-    public static function getAllBikes()
+    static function getAllBikes()
     {
         global $wpdb;
         //tablename so angegeben, weil wpdb->bike nicht funktioniert
@@ -81,7 +73,7 @@ class Bike
         return $bikesCollection;
     }
 
-    public static function getBikesByBrand($brand_name)
+    static function getBikesByBrand($brand_name)
     {
         global $wpdb;
 
@@ -97,7 +89,7 @@ class Bike
         return $bikesCollection;
     }
 
-    public static function getBikePriceById($bike_id)
+    static function getBikePriceById($bike_id)
     {
         global $wpdb;
 
@@ -107,7 +99,7 @@ class Bike
         return $bikePreis;
     }
 
-    public static function getAllAccessibleBikes($abholdatum, $rueckgabedatum)
+    static function getAllAccessibleBikes($abholdatum, $rueckgabedatum)
     {
         global $wpdb;
 
@@ -132,7 +124,7 @@ class Bike
         return $bikesCollection;
     }
 
-    public static function getAllAccessibleBikesByBrand($abholdatum, $rueckgabedatum, $brandId)
+    static function getAllAccessibleBikesByBrand($abholdatum, $rueckgabedatum, $brandId)
     {
         global $wpdb;
 
@@ -157,66 +149,10 @@ class Bike
         return $bikesCollection;
     }
 
-
-
-    /**
-     * Get the value of name
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set the value of name
-     */
-    public function setName($name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of preis
-     */
-    public function getPreis()
-    {
-        return $this->preis;
-    }
-
-    /**
-     * Set the value of preis
-     */
-    public function setPreis($preis): self
-    {
-        $this->preis = $preis;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of rabatt
-     */
-    public function getRabatt()
-    {
-        return $this->rabatt;
-    }
-
-    /**
-     * Set the value of rabatt
-     */
-    public function setRabatt($rabatt): self
-    {
-        $this->rabatt = $rabatt;
-
-        return $this;
-    }
-
     /**
      * Get the value of errors
      */
-    public function getErrors()
+    function getErrors()
     {
         return $this->errors;
     }
@@ -224,27 +160,9 @@ class Bike
     /**
      * Set the value of errors
      */
-    public function setErrors($errors): self
+    function setErrors($errors): self
     {
         $this->errors = $errors;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of bild
-     */
-    public function getBild()
-    {
-        return $this->bild;
-    }
-
-    /**
-     * Set the value of bild
-     */
-    public function setBild($bild): self
-    {
-        $this->bild = $bild;
 
         return $this;
     }
@@ -253,35 +171,52 @@ class Bike
     /**
      * Get the value of id
      */
-    public function getId()
+    function getId()
     {
-        return $this->id;
+        return $this->b_id;
     }
 
     /**
      * Set the value of id
      */
-    public function setId($id): self
+    function setId($id): self
     {
-        $this->id = $id;
+        $this->b_id = $id;
 
         return $this;
     }
 
     /**
-     * Get the value of brandId
+     * Get the value of licenseplate
      */
-    public function getBrandId()
-    {
-        return $this->brandId;
+    function getLicensePlate(){
+        return $this->b_licenseplate;
     }
 
     /**
-     * Set the value of brandId
+     * Set the value of licenseplate
      */
-    public function setBrandId($brandId): self
+    function setLicensePlate($licenseplate): self
     {
-        $this->brandId = $brandId;
+        $this->b_licenseplate = $licenseplate;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of bikedetails
+     */
+    function getBdId(){
+        return $this->bd_id;
+    }
+
+
+     /**
+     * Set the value of bikedetails
+     */
+    function setBdId($bikeDetailId): self
+    {
+        $this->bd_id = $bikeDetailId;
 
         return $this;
     }

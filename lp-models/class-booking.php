@@ -1,131 +1,109 @@
 <?php
 
-
+//braucht unbedingt einen boolean mit bestätigt(confirmed)
 class Booking
 {
-    private $id;
-    private $abholdatum;
-    private $rueckgabedatum;
-    private $preis;
-    private $bikeId;
+    private $bk_id;
+    private $bk_date;
+    private $bk_confirmed;
+    private $bk_totalPrice;
     private $errors;
 
-    function __construct($id, $abholdatum, $rueckgabedatum, $preis, $bikeId)
+    function __construct()
     {
-        $this->setId($id);
-        $this->setAbholdatum($abholdatum);
-        $this->setRueckgabedatum($rueckgabedatum);
-        $this->setPreis($preis);
-        $this->setBikeId($bikeId);
         $this->errors = [];
     }
 
-    function calculateBookingPrice($tagesPreis)
+    /*function calculateBookingPrice($tagesPreis)
     {
         $this->preis = ($tagesPreis) * ((strtotime($this->rueckgabedatum) - strtotime($this->abholdatum)) / (60 * 60 * 24));
         return $this->preis;
-    }
+    }*/
 
-    public static function getAllBookingsFromJson(){
-        $bookingString = file_get_contents(MY_PLUGIN_PATH . 'lp-data/booking_data.json');
-        if($bookingString === false){
-            return null;
-        }
-        $bookingObjects = json_decode($bookingString);
+    static function getAllBookingsFromJson(){
+        require_once(MY_PLUGIN_PATH . 'lp-functions/model-functions.php');
+
+        $bookingObjects = getFromJson(MY_PLUGIN_PATH . 'lp-data/booking_data.json');
         $bookingCollection = array();
         foreach ($bookingObjects as $booking) {
-            $bookingCollection[] = new Booking($booking->booking_id, $booking->booking_abholdatum, $booking->booking_rueckgabedatum, $booking->booking_preis, $booking->bike_id); 
+            $tempBooking = new Booking();
+            $tempBooking->setId($booking->booking_id);
+            $tempBooking->setDate($booking->booking_date);
+            $tempBooking->setConfirmed($booking->booking_confirmed);
+            $tempBooking->setTotalPrice($booking->booking_totalprice);
+            $bookingCollection[] = $tempBooking; 
         }
         return $bookingCollection;
     }
 
-
     /**
-     * Get the value of id
+     * Get the value of bk_id
      */
-    public function getId()
+    function getId()
     {
-        return $this->id;
+        return $this->bk_id;
     }
 
     /**
-     * Set the value of id
+     * Set the value of bk_id
      */
-    public function setId($id): self
+    function setId($bk_id): self
     {
-        $this->id = $id;
+        $this->bk_id = $bk_id;
 
         return $this;
     }
 
     /**
-     * Get the value of abholdatum
+     * Get the value of bk_date
      */
-    public function getAbholdatum()
+    function getDate()
     {
-        return $this->abholdatum;
+        return $this->bk_date;
     }
 
     /**
-     * Set the value of abholdatum
+     * Set the value of bk_date
      */
-    public function setAbholdatum($abholdatum): self
+    function setDate($bk_date): self
     {
-        $this->abholdatum = $abholdatum;
+        $this->bk_date = $bk_date;
 
         return $this;
     }
 
     /**
-     * Get the value of rueckgabedatum
+     * Get the value of bk_confirmed
      */
-    public function getRueckgabedatum()
+    function getConfirmed()
     {
-        return $this->rueckgabedatum;
+        return $this->bk_confirmed;
     }
 
     /**
-     * Set the value of rueckgabedatum
+     * Set the value of bk_confirmed
      */
-    public function setRueckgabedatum($rueckgabedatum): self
+    function setConfirmed($bk_confirmed): self
     {
-        $this->rueckgabedatum = $rueckgabedatum;
+        $this->bk_confirmed = $bk_confirmed;
 
         return $this;
     }
 
     /**
-     * Get the value of preis
+     * Get the value of bk_totalPrice
      */
-    public function getPreis()
+    function getTotalPrice()
     {
-        return $this->preis;
+        return $this->bk_totalPrice;
     }
 
     /**
-     * Set the value of preis
+     * Set the value of bk_totalPrice
      */
-    public function setPreis($preis): self
+    function setTotalPrice($bk_totalPrice): self
     {
-        $this->preis = $preis;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of bikeId
-     */
-    public function getBikeId()
-    {
-        return $this->bikeId;
-    }
-
-    /**
-     * Set the value of bikeId
-     */
-    public function setBikeId($bikeId): self
-    {
-        $this->bikeId = $bikeId;
+        $this->bk_totalPrice = $bk_totalPrice;
 
         return $this;
     }
@@ -133,7 +111,7 @@ class Booking
     /**
      * Get the value of errors
      */
-    public function getErrors()
+    function getErrors()
     {
         return $this->errors;
     }
@@ -141,7 +119,7 @@ class Booking
     /**
      * Set the value of errors
      */
-    public function setErrors($errors): self
+    function setErrors($errors): self
     {
         $this->errors = $errors;
 

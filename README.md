@@ -9,6 +9,7 @@
 - Eine View erstellen (wenn man ein Motorrad anklickt soll eine Ansicht mit Details von diesem Mottorad erscheinen)
 - Logik: Rückgabedatum darf nicht vor Abholdatum liegen
 - SQL Statements mit %s absichern (siehe Beispiel class-brand getBrandIdByName)
+- Motorradbilder sollten alle eine einheitliche Größe haben (mit Photoshop richtig skalieren)
 - Weitere Ideen für dieses Plugin
 
 ## Workflow

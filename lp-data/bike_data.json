@@ -1,34 +1,22 @@
 [
     {
         "bike_id": 1,
-        "bike_name": "BMW F900 XR",
-        "bike_preis": 14000,
-        "bike_rabatt": true,
-        "bike_bild": "lp-data/lp-images/lp-bikes/BMW_F900_XR.jpg",
-        "brand_id": 1
+        "bike_licenseplate": "IM-264CV",
+        "bikedetail_id": 1
     },
     {
         "bike_id": 2,
-        "bike_name": "BMW R Nine T",
-        "bike_preis": 13500,
-        "bike_rabatt": false,
-        "bike_bild": "lp-data/lp-images/lp-bikes/BMW_R_Nine_T.jpg",
-        "brand_id": 1
+        "bike_licenseplate": "IM-777AH",
+        "bikedetail_id": 4
     },
     {
         "bike_id": 3,
-        "bike_name": "KTM 790 AdventureR",
-        "bike_preis": 13000,
-        "bike_rabatt": true,
-        "bike_bild": "lp-data/lp-images/lp-bikes/KTM_790_AdventureR.jpg",
-        "brand_id": 2
+        "bike_licenseplate": "IM-HI007",
+        "bikedetail_id": 3
     },
     {
         "bike_id": 4,
-        "bike_name": "BMW_R1250_GS_Rally",
-        "bike_preis": 14000,
-        "bike_rabatt": false,
-        "bike_bild": "lp-data/lp-images/lp-bikes/BMW_R1250_GS_Rally.jpg",
-        "brand_id": 1
+        "bike_licenseplate": "IM-345LB",
+        "bikedetail_id": 2
     }
 ]

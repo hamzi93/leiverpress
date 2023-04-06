@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
    die('You are not allowed to be here!');
 }
 
-
+//@Package?? -> für package private??
 
 if (!class_exists('MyPlugin')) {
 
@@ -29,13 +29,28 @@ if (!class_exists('MyPlugin')) {
 
       public function initialize()
       {
-         include_once MY_PLUGIN_PATH . 'lp-database/brand-database.php';
+         include_once MY_PLUGIN_PATH . 'lp-database/brands-database.php';
 
-         include_once MY_PLUGIN_PATH . 'lp-database/bike-database.php';
+         include_once MY_PLUGIN_PATH . 'lp-database/bikelicenses-database.php';
 
-         include_once MY_PLUGIN_PATH . 'lp-database/booking-database.php';
+         include_once MY_PLUGIN_PATH . 'lp-database/bikedetails-database.php';
+
+         include_once MY_PLUGIN_PATH . 'lp-database/bikes-database.php';
+
+         //include_once MY_PLUGIN_PATH . 'lp-database/clothingcategory-database.php';
+
+         //include_once MY_PLUGIN_PATH . 'lp-database/clothingdetails-database.php';
+
+         //include_once MY_PLUGIN_PATH . 'lp-database/clothings-database.php';
+
+         include_once MY_PLUGIN_PATH . 'lp-database/customers-database.php';
+
+         include_once MY_PLUGIN_PATH . 'lp-database/bookings-database.php';
+
+         include_once MY_PLUGIN_PATH . 'lp-database/bookingdetails-database.php';
          
-         include_once MY_PLUGIN_PATH . 'lp-includes/bike-search.php';
+         //bike search wegen neuen klassen struktur noch nicht ready
+         //include_once MY_PLUGIN_PATH . 'lp-includes/bike-search.php';
       }
    }
 

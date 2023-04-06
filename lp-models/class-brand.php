@@ -2,36 +2,34 @@
 
 class Brand
 {
-    private $id;
-    private $name;
+    private $br_id;
+    private $br_name;
 
-    function __construct($id, string $name){
+    function __construct($id, $name){
         $this->setId($id);
         $this->setName($name);
     }
 
     function equals_brand($newBrand){
-        if($this->name == strtoupper($newBrand)){
+        if($this->br_name == strtoupper($newBrand)){
             return false;
         }
         return true;
     }
 
-    public static function getAllBrandsFromJson(){
-        $brandString = file_get_contents(MY_PLUGIN_PATH . 'lp-data/brand_data.json');
-        if($brandString === false){
-            return null;
-        }
-        $brandObjects = json_decode($brandString);
+    static function getAllBrandsFromJson(){
+        require_once(MY_PLUGIN_PATH . 'lp-functions/model-functions.php');
+        
+        $brandObjects = getFromJson(MY_PLUGIN_PATH . 'lp-data/brand_data.json');
         $bikeCollection = array();
+        
         foreach ($brandObjects as $brand) {
-            
             $bikeCollection[] = new Brand($brand->brand_id, $brand->brand_name);
         }
         return $bikeCollection;
     }
 
-    public static function getAllBrands()
+    static function getAllBrands()
     {
         global $wpdb;
         //tablename so angegeben, weil wpdb->bike nicht funktioniert
@@ -45,12 +43,12 @@ class Brand
         return $brandsCollection;
     }
 
-    public static function getBrandIdByName($brand_name) {
+    static function getBrandIdByName($brandName) {
         global $wpdb;
         $tableName = $wpdb->prefix . 'brand';
     
         // Holt sich die ID der Marke nach dem Namen des Bikes raus. (Abgesichert durch %s)
-        $query = $wpdb->prepare("SELECT brand_id FROM $tableName WHERE brand_name = %s", $brand_name);
+        $query = $wpdb->prepare("SELECT brand_id FROM $tableName WHERE brand_name = %s", $brandName);
     
         $brand = $wpdb->get_results($query);
     
@@ -64,17 +62,17 @@ class Brand
     /**
      * Get the value of id
      */
-    public function getId()
+    function getId()
     {
-        return $this->id;
+        return $this->br_id;
     }
 
     /**
      * Set the value of id
      */
-    public function setId($id): self
+    function setId($id): self
     {
-        $this->id = $id;
+        $this->br_id = $id;
 
         return $this;
     }
@@ -82,20 +80,20 @@ class Brand
     /**
      * Get the value of name
      */
-    public function getName()
+    function getName()
     {
-        return $this->name;
+        return $this->br_name;
     }
 
     /**
      * Set the value of name
      */
-    public function setName($name): self
+    function setName($name): self
     {
         if(strlen($name) < 31){
-            $this->name = strtoupper($name);
+            $this->br_name = strtoupper($name);
         }else{
-            $this->name = '';
+            $this->br_name = '';
         }
         return $this;
     }

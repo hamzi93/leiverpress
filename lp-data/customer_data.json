@@ -1,0 +1,30 @@
+[
+    {
+        "customer_id": 1,
+        "customer_firstname": "Armin",
+        "customer_lastname": "Hamzu",
+        "customer_email": "armin.hh@outlook.de",
+        "customer_phonenumber": "+43 664 1018990"
+    },
+    {
+        "customer_id": 2,
+        "customer_firstname": "Chris",
+        "customer_lastname": "Snyder",
+        "customer_email": "snyder.ch@hotmail.com",
+        "customer_phonenumber": "+43 664 3444546"
+    },
+    {
+        "customer_id": 3,
+        "customer_firstname": "Jakoby",
+        "customer_lastname": "Spisssssssss",
+        "customer_email": "sssssss.is@outlook.com",
+        "customer_phonenumber": "+43 699 2310090"
+    },
+    {
+        "customer_id": 4,
+        "customer_firstname": "Dän",
+        "customer_lastname": "Widi",
+        "customer_email": "widi.däntheman@outlook.com",
+        "customer_phonenumber": "+43 676 0011007"
+    }
+]

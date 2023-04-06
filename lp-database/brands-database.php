@@ -1,19 +1,19 @@
 <?php
 
-global $brand_db_version;
-$brand_db_version = '1.0';
+global $brands_db_version;
+$brands_db_version = '1.0';
 
 require_once(MY_PLUGIN_PATH . 'lp-models/class-brand.php');
 
 /**
  * Datenbank erstellen
  */
-function brand_install()
+function brands_install()
 {
 	global $wpdb;
-	global $brand_db_version;
+	global $brands_db_version;
 
-	$table_name = $wpdb->prefix . 'brand';
+	$table_name = $wpdb->prefix . 'brands';
 	$charset_collate = $wpdb->get_charset_collate();
 
 	$sql = "CREATE TABLE $table_name (
@@ -26,30 +26,30 @@ function brand_install()
 	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 	dbDelta($sql);
 
-	add_option('brand_db_version', $brand_db_version);
+	add_option('brands_db_version', $brands_db_version);
 }
 
 /**
  * Daten mithilfe der Bike Klasse und dem json Format ausgelesen und in Datenbank eingefügt
  */
-function brand_install_data()
+function brands_install_data()
 {
 	global $wpdb;
 
 	$brands = Brand::getAllBrandsFromJson();
-	$table_name = $wpdb->prefix . 'brand';
+	$table_name = $wpdb->prefix . 'brands';
 
 	foreach ($brands as $brand) {
-		$brand_name = $brand->getName();
+		$brandName = $brand->getName();
 		$wpdb->insert(
 			$table_name,
 			array(
-				'brand_name' => $brand_name
+				'brand_name' => $brandName
 			)
 		);
 	}
 }
 
 
-//register_activation_hook(MY_PLUGIN_FILE, 'brand_install'); //Datenbank wird erstellt bei Aktivierung vom Plugin
-//register_activation_hook(MY_PLUGIN_FILE, 'brand_install_data'); //Daten werden in die Datenbank eingefügt
+register_activation_hook(MY_PLUGIN_FILE, 'brands_install'); //Datenbank wird erstellt bei Aktivierung vom Plugin
+register_activation_hook(MY_PLUGIN_FILE, 'brands_install_data'); //Daten werden in die Datenbank eingefügt

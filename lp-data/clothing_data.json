@@ -1,0 +1,47 @@
+[
+    {
+        "clothing_id": 1,
+        "clothing_size": "M",
+        "clothingdetail_id": 1
+    },
+    {
+        "clothing_id": 2,
+        "clothing_size": "L",
+        "clothingdetail_id": 1
+    },
+    {
+        "clothing_id": 3,
+        "clothing_size": "XL",
+        "clothingdetail_id": 2
+    },
+    {
+        "clothing_id": 4,
+        "clothing_size": "M",
+        "clothingdetail_id": 3
+    },
+    {
+        "clothing_id": 5,
+        "clothing_size": "44",
+        "clothingdetail_id": 4
+    },
+    {
+        "clothing_id": 6,
+        "clothing_size": "XXL",
+        "clothingdetail_id": 5
+    },
+    {
+        "clothing_id": 7,
+        "clothing_size": "L",
+        "clothingdetail_id": 5
+    },
+    {
+        "clothing_id": 8,
+        "clothing_size": "46",
+        "clothingdetail_id": 4
+    },
+    {
+        "clothing_id": 9,
+        "clothing_size": "S",
+        "clothingdetail_id": 3
+    }
+]

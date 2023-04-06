@@ -1,0 +1,37 @@
+[
+    {
+        "clothingdetail_id": 1,
+        "clothingdetail_name": "HX 444 Classic",
+        "clothingdetail_image": "lp-data/lp-images/lp-clothings/helm.png",
+        "clothingdetail_description": "Sicherheit auf höchster Stufe ist beim Helm HX 444 Classic gewährleistet. Es werden keine Kompromisse gemacht und so tritt das Modell u. a. mit einem kratzfesten Visier mit Pinlock Antifog Scheibe, integrierter Sonnenblende, austrennbarem Innenfutter, Atemabweiser etc. auf. Dieser Integralhelm ist aus leichtem Fiberglas hergestellt, Kinn und Stirnbelüftet mit einem Ratschen-Verschluss ausgestattet und klarlackversiegelt. Leicht zu reinigen durch die glatte Oberfläche und ideal im Handling erweist sich der HX als idealer Helm für unsere Kunden. Selbstversändlich wird der HX nur in Kombination mit der Baumwoll-Sturmhaube IXS Face ausgegeben um den perfekten Tragekomfort sowie ein hohes Maß an Hygiene zu gewährleisten.",
+        "clothingcategory_id": 1
+    },
+    {
+        "clothingdetail_id": 2,
+        "clothingdetail_name": "Nemesis",
+        "clothingdetail_image": "lp-data/lp-images/lp-clothings/jacke.png",
+        "clothingdetail_description": "Super bequeme Jacken mit integrierter Membrane und Protektoren sowie herausnehmbaren Thermofutter gewährleisten den perfekten Tragekomfort, vereint mit optimaler Sicherheit. Nemesis ist der ideale Begleiter über Tirols Pässe, da diese Jacke regen- und windabweisend ist, am Berg warm hält und im warmen Tal mit einigen Handgriffen zu einem sommertauglichen Bikeraccessoire wird.",
+        "clothingcategory_id": 2
+    },
+    {
+        "clothingdetail_id": 3,
+        "clothingdetail_name": "Nandi",
+        "clothingdetail_image": "lp-data/lp-images/lp-clothings/hose.png",
+        "clothingdetail_description": "Nandi ist die speziell auf die Jacke Nimbus abgestimmte Hose. Ebenfalls mit Knieprotektoren ausgestattet und einem antiseptischen Innenfutter macht dieses Teil Spaß am Bike. Im Gegensatz zu einer Lederkombi, schwitzt man in Nandi viel weniger, erlaubt viel mehr Luft auf der Haut (durch Belüftungsöffnungen) und hat einen idealen Tragekomfort durch spezielle Stretcheinsätzte im Schritt und an den Kniekehlen. Das Komfort-Fussbett ist gerade bei längeren Touren eine Wohltat für ihre Füße.",
+        "clothingcategory_id": 3
+    },
+    {
+        "clothingdetail_id": 4,
+        "clothingdetail_name": "Attack Evo",
+        "clothingdetail_image": "lp-data/lp-images/lp-clothings/stiefel.png",
+        "clothingdetail_description": "Wasserdichter und atmungsaktiver Rindsleder-Stiefel der neuesten Generation. Mit verstärkter Fersenkappe, abreibfester Gummisohle und  Stretcheinsätzten an der Wade ist dies ein sicherer und gleichzeitig auch sehr komfortabler Motorradstiefel.",
+        "clothingcategory_id": 4
+    },
+    {
+        "clothingdetail_id": 5,
+        "clothingdetail_name": "Adventure",
+        "clothingdetail_image": "lp-data/lp-images/lp-clothings/handschuhe.png",
+        "clothingdetail_description": "Der Enduro-Handschuh aus Ziegenleder, vereint Sicherheit mit Tragekomfort. Aufgepolsterte Teile im Bereich der Knöchel, wie auch im Innenhand- und Daumespannbereich sind für die Sicherheit wichtige Fakten. Ein tolles Highlight ist der Scheibenwischer am linken Daumen, der Wasser und Insekten vom Visier befreit. Natürlich verfügt der Adventure auch über Touchscreen taugliche Einsätze fürs Navi oder Smartphone. Die Membrane und das Innenfutter sind bei Regen und kühlem Wetter unerlässlich. Bei Hitze können die Ventilationsszipps geöffnet werden – der Fahrtwind kühlt den Handschuh dann von innen. Speziell entwickelte Membranen verhindern, daß Insekten in das innere des Handschuhs gelangen.",
+        "clothingcategory_id": 5
+    }
+]
